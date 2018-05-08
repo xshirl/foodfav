@@ -7,11 +7,12 @@ It's a web application where any user can look up on local restaurants' data and
 
 
 ## Wireframes
-![Wireframe](./wireframe/wireframe.jpg)
+
 ## User Stories
-![Wireframe](./wireframe/feature.jpg)
+![Wireframe](../wire_frame/main_page.png)
 ## ERDs
-![erd](./wireframe/erd.jpg)
+
+![Wireframe](../wire_frame/main_page.png)
 
 ## List of 3rd Party Technologies
 
@@ -20,9 +21,12 @@ It's a web application where any user can look up on local restaurants' data and
 ## MVP
 - Create database foodfav_db with tables user, favorites, and reviews.
 - Create models and controllers for user, favorites, and reviews to make it CRUD
-- 
+- Implement the yelp API on server side. 
+- Create necessary components on React - search box, search results list, review list, review form to add/edit reviews, favorites list, restaurant component with information on the restaurant. 
+- Implement user auth in React
  
 
 ## Post MVP
+
 
 ## Project Timeline
