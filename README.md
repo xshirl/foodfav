@@ -7,12 +7,13 @@ It's a web application where any user can look up on local restaurants' data and
 
 
 ## Wireframes
+![Wireframe](./wire_frame/wireframe.jpg)
 
 ## User Stories
-![Wireframe](../wire_frame/main_page.png)
+![Wireframe](./wire_frame/feature.jpg)
 ## ERDs
 
-![Wireframe](../wire_frame/main_page.png)
+![Wireframe](./wire_frame/erd.jpg)
 
 ## List of 3rd Party Technologies
 
