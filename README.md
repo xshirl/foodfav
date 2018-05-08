@@ -25,9 +25,16 @@ It's a web application where any user can look up on local restaurants' data and
 - Implement the yelp API on server side. 
 - Create necessary components on React - search box, search results list, review list, review form to add/edit reviews, favorites list, restaurant component with information on the restaurant. 
 - Implement user auth in React
- 
+- Style the application with CSS
 
 ## Post MVP
+- implement a Google Maps api to pin locations of restaurants
 
 
 ## Project Timeline
+- Create schema and seed - 2 hours
+- Create models and controllers - 5 hours
+- API implementation - 3 hours
+- Create React components - 20 hours
+- User auth - 5 hours
+- Styling - 3 hours
