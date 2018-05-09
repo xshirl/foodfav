@@ -2,7 +2,7 @@ const express = require('express');
 const logger = require('morgan');
 const bodyParser = require('body-parser');
 
-// const todoRouter = require('./routes/todoRouter')
+const restRouter = require('./routes/restRouter')
 
 const app = express();
 
@@ -16,7 +16,7 @@ if(process.env.NODE_ENV === 'production') {
   app.use(express.static('client/build'));
 }
 
-// app.use('/api/todos', todoRou);
+app.use('/', restRouter);
 
 app.listen(PORT, ()=> {
   console.log(`Listening on port ${PORT}`);
