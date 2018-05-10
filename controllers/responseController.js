@@ -1,16 +1,10 @@
-function sendChineseNyResponse(req, res) {
+function sendOkResponse(req, res) {
   res.json({
     status: 'ok',
-    data: res.locals.chineseNY
+    data: res.locals.restaurants
   })
 }
 
-function sendItalNyResponse(req, res) {
-  res.json({
-    status: 'ok',
-    data: res.locals.italianNY
-  })
-}
 
 function sendErrorResponse(err, req, res, next) {
   res.json({
@@ -20,8 +14,7 @@ function sendErrorResponse(err, req, res, next) {
 }
 
 module.exports = {
-  sendChineseNyResponse,
-  sendItalNyResponse,
+  sendOkResponse,
   sendErrorResponse
 }
 
