@@ -7,8 +7,7 @@ class App extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      restaurants: [],
-      reviews:[]
+      restaurants: []
     }
   }
 
@@ -17,8 +16,10 @@ class App extends Component {
       <Router>
       <div className="App">
       <p>hello world</p>
+
+
       </div>
-      <RestaurantList restaurants={this.state.restaurants} />
+
       </Router>
     );
   }
