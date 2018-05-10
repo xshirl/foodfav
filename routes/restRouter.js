@@ -3,18 +3,12 @@ const router = require('express').Router();
 const restController = require('../controllers/restaurantController');
 const responseController = require('../controllers/responseController');
 
-router.route('/chinese/nyc')
+router.route('/:type/:location')
 .get(
-  restController.getChinNyc,
-  responseController.sendChineseNyResponse,
+  restController.getRestaurants,
+  responseController.sendOkResponse,
   responseController.sendErrorResponse
 )
 
-router.route('/italian/nyc')
-.get(
-  restController.getItalNyc,
-  responseController.sendItalNyResponse,
-  responseController.sendErrorResponse
-)
 
 module.exports = router;

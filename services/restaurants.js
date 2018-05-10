@@ -3,7 +3,7 @@ require('dotenv').config();
 const bearer = 'Bearer ' + process.env.API_KEY;
 
 function getTypeLocation(type, location) {
-  const query = fetch(`https://api.yelp.com/v3/businesses/search?term=${type}&location=${location}`, {
+  const query = fetch(`https://api.yelp.com/v3/businesses/search?term=${type}&location=nyc`, {
     method: 'GET',
     withCredentials: true,
     credentials: 'include',
