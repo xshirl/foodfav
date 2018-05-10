@@ -1,9 +1,9 @@
 const servR = require('../services/restaurants');
 
-function getChinNyc(req, res, next) {
-  servR.getTypeLocation('chinese', 'nyc')
+function getRestaurants(req, res, next) {
+  servR.getTypeLocation(req.params.type, req.params.location)
     .then(data => {
-      res.locals.chineseNY = data
+      res.locals.restaurants = data
       next()
     })
     .catch(err => {
@@ -11,17 +11,7 @@ function getChinNyc(req, res, next) {
     })
 }
 
-function getItalNyc(req, res, next) {
-  servR.getTypeLocation('italian', 'nyc')
-    .then(data => {
-      res.locals.italianNY = data
-      next()
-    })
-    .catch(err => {
-      next(err)
-    })
-}
+
 module.exports = {
-  getChinNyc,
-  getItalNyc
+  getRestaurants
 }
