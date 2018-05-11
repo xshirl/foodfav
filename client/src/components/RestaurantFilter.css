@@ -1,0 +1,11 @@
+body {
+  margin:0;
+  padding:0;
+  text-align:center;
+}
+
+.restaurant {
+  float:left;
+  padding:20px;
+  text-align:center;
+}

@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import './RestaurantFilter.css';
 
 export default class RestaurantFilter extends Component {
   constructor(props) {
@@ -28,9 +29,10 @@ export default class RestaurantFilter extends Component {
   render() {
   return (
     <div>
+    <h1> FoodFav </h1>
     <form onSubmit={this.handleSubmit} className='filter'>
-      <input type='text' ref='term'  name='term' />
-      <input type='text' ref='location'  name="location" />
+      <input type='text' ref='term'  name='term' placeholder="Search term" />
+      <input type='text' ref='location'  name="location" placeholder="Location" />
       <input type="submit" value="Submit" onClick="" />
     </form>
     </div>

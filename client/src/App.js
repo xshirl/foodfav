@@ -42,8 +42,8 @@ class App extends Component {
     return (
       <Router>
       <div className="App">
-      <p>hello world</p>
-      <RestaurantFilter onSubmit = {this.handleFilterSubmit} term={this.state.term} location={this.state.location} />
+      <RestaurantFilter onSubmit = {this.handleFilterSubmit}  />
+      <RestaurantList restaurants={this.state.restaurants} />
       </div>
 
       </Router>
