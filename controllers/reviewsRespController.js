@@ -5,10 +5,23 @@ function getReviewsResponse(req, res) {
   })
 }
 
+function getUserReviewsResponse(req, res) {
+  res.json({
+    status: 'ok',
+    data: res.locals.userReviews
+  })
+}
+
+function getUserRestReviewsResponse(req, res) {
+   res.json({
+    status: 'ok',
+    data: res.locals.userRestReviews
+  })
+}
 function createReviewsResponse(req, res) {
   res.json({
     status: 'ok',
-    data: res.locals.reviews
+    data: res.locals.review
   })
 }
 
@@ -20,7 +33,8 @@ function deleteReviewsResponse(req, res) {
 
 function updateReviewsResponse(req, res){
   res.json({
-    status: 'ok'
+    status: 'ok',
+    data: res.locals.updateReview
   })
 }
 
@@ -33,6 +47,9 @@ function sendErrorResponse(err, req, res, next) {
 
 module.exports = {
   getReviewsResponse,
+  getUserReviewsResponse,
+  getUserRestReviewsResponse,
+  updateReviewsResponse,
   createReviewsResponse,
   deleteReviewsResponse,
   sendErrorResponse

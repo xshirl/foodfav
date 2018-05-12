@@ -3,7 +3,7 @@
 DROP TABLE IF EXISTS users CASCADE;
 DROP TABLE IF EXISTS favs;
 DROP TABLE IF EXISTS reviews;
-DROP TABLE IF EXISTS bars CASCADE;
+DROP TABLE IF EXISTS rest CASCADE;
 
 CREATE TABLE users (
     id SERIAL PRIMARY KEY,
@@ -13,9 +13,8 @@ CREATE TABLE users (
 
 );
 
-CREATE TABLE bars (
+CREATE TABLE rest (
     id SERIAL PRIMARY KEY,
-    -- bar_id INTEGER,
     name TEXT,
     location TEXT,
     image_url TEXT,
@@ -32,8 +31,9 @@ CREATE TABLE favs (
 CREATE TABLE reviews (
     id SERIAL PRIMARY KEY,
     content TEXT,
-    user_id INTEGER REFERENCES users(id),
-    bar_id INTEGER REFERENCES bars(id)
+    rating INTEGER,
+    user_id INTEGER REFERENCES users(id) ON DELETE CASCADE,
+    rest_id INTEGER REFERENCES rest(id)
 );
 
 

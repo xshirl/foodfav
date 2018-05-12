@@ -1,8 +1,8 @@
-const reviewsDb = require('../models/favs')
+const reviewsDb = require('../models/reviews')
 
 
 function getReviews(req, res, next) {
-  reviewsDb.getReviews(req.params.user_id)
+  reviewsDb.getReviews()
   .then(data => {
     res.locals.reviews = data;
     next();
@@ -10,19 +10,38 @@ function getReviews(req, res, next) {
   .catch(next);
 }
 
-function createReviews(req, res, next) {
-  reviewsDb.createReviews(req.params.user_id, req.params.rest_id)
-  .then(data=> {
-    res.locals.reviews = data;
+function getUserReviews(req, res, next) {
+  reviewsDb.getUserReviews(req.params.user_id)
+  .then(data => {
+    res.locals.userReviews= data;
     next();
   })
   .catch(next);
 }
 
-function updateReviews(req, res, next) {
-  reviewsDb.update(req.body)
+function getUserRestReviews(req, res, next) {
+  reviewsDb.getUserRestReview(req.params.user_id, req.params.rest_id)
+  .then(data => {
+    res.locals.userRestReviews= data;
+    next();
+  })
+  .catch(next);
+}
+
+function createReview(req, res, next) {
+  reviewsDb.createReview(req.body)
+  .then(data=> {
+    res.locals.review = data;
+    next();
+  })
+  .catch(next);
+}
+
+function updateReview(req, res, next) {
+  req.body.id = req.params.id;
+  reviewsDb.updateReview(req.body)
     .then(data => {
-      res.locals.reviews = data;
+      res.locals.updateReview = data;
       next();
     })
     .catch(next);
@@ -30,8 +49,8 @@ function updateReviews(req, res, next) {
 
 
 
-function deleteReviews(req, res, next) {
-  reviewsDb.deleteReviews(req.params.rest_id)
+function deleteReview(req, res, next) {
+  reviewsDb.deleteReview(req.params.id)
   .then(()=> {
     next()
   })
@@ -40,8 +59,10 @@ function deleteReviews(req, res, next) {
 
 module.exports = {
   getReviews,
-  createReviews,
-  deleteReviews,
-  updateReviews
+  getUserReviews,
+  getUserRestReviews,
+  createReview,
+  deleteReview,
+  updateReview
 }
 

@@ -3,34 +3,39 @@ const router = require('express').Router();
 const reviewsController = require('../controllers/reviewsController');
 const reviewsRespController = require('../controllers/reviewsRespController');
 
+router.route('/')
+.get(
+  reviewsController.getReviews,
+  reviewsRespController.getReviewsResponse,
+  reviewsRespController.sendErrorResponse)
+.post(
+  reviewsController.createReview,
+  reviewsRespController.createReviewsResponse,
+  reviewsRespController.sendErrorResponse
+  )
+
 router.route('/:user_id')
 .get(
-  reviewController.getReviews,
-  reviewRespController.getReviewsResponse,
-  reviewRespController.sendErrorResponse
-)
+  reviewsController.getUserReviews,
+  reviewsRespController.getUserReviewsResponse,
+  reviewsRespController.sendErrorResponse)
 
 router.route('/:user_id/:rest_id')
-.post(
-  reviewController.createReviews,
-  reviewRespController.createReviewsResponse,
-  reviewRespController.sendErrorResponse
-  )
+.get(
+  reviewsController.getUserRestReviews,
+  reviewsRespController.getUserRestReviewsResponse,
+  reviewsRespController.sendErrorResponse
+)
 
-router.route('/:rest_id')
+router.route('/:id')
+.put(
+  reviewsController.updateReview,
+  reviewsRespController.updateReviewsResponse,
+  reviewsRespController.sendErrorResponse)
 .delete(
-  reviewController.deleteReviews,
-  reviewRespController.deleteReviewsResponse,
-  reviewRespController.sendErrorResponse
-  )
-
-
-router.route('/:rest_id')
-.delete(
-  reviewController.updateReviews,
-  reviewRespController.updateReviewsResponse,
-  reviewRespController.sendErrorResponse
-
+  reviewsController.deleteReview,
+  reviewsRespController.deleteReviewsResponse,
+  reviewsRespController.sendErrorResponse
   )
 
 module.exports = router;

@@ -6,7 +6,7 @@ const restRouter = require('./routes/restRouter');
 // const apiRouter = require('./routes/apiRouter');
 const favRouter = require('./routes/favRouter');
 const barRouter = require('./routes/barRouter');
-
+const reviewsRouter = require('./routes/reviewsRouter');
 const app = express();
 
 const PORT = process.env.PORT || 3001;
@@ -26,6 +26,7 @@ app.use('/restaurants', restRouter);
 // apiRouter.get('/restaurants', restRouter);
 app.use('/api/favs', favRouter);
 app.use('/api/bars', barRouter);
+app.use('/api/reviews', reviewsRouter);
 
 app.listen(PORT, ()=> {
   console.log(`Listening on port ${PORT}`);

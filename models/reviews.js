@@ -1,41 +1,53 @@
 const db = require('../config/connection');
 
-function getReviews(id) {
-  const query = db.one(`
-    SELECT rest_id FROM reviews
-    WHERE user_id = $1`, user_id)
-  console.log(query);
+function getReviews() {
+  const query = db.any(`
+    SELECT * FROM reviews`)
   return query;
 }
 
-function createReviews(id) {
-  return query = db.one(`
-    INSERT INTO reviews (user_id, rest_id)
-    VALUES ($/user_id/, $/rest_id/
-    RETURNING *`, user_id, rest_id)
+function getUserReviews(user_id) {
+  return query = db.any(`
+    SELECT * FROM reviews
+    WHERE user_id = $1`, user_id)
 }
 
-function deleteReviews(id) {
+function getUserRestReview(user_id, rest_id) {
+  return query = db.one(`
+    SELECT * FROM reviews
+    WHERE user_id = $1 and rest_id = $2`, [user_id, rest_id])
+}
+
+function createReview(review) {
+  return query = db.one(`
+    INSERT INTO reviews (content, rating, user_id, rest_id)
+    VALUES ($/content/, $/rating/, $/user_id/, $/rest_id/)
+    RETURNING *`, review)
+}
+
+function deleteReview(id) {
   return query = db.none(`
     DELETE FROM reviews
-    WHERE rest_id = $1`, rest_id)
+    WHERE id=$1`, id)
 }
 
 
-function updateReviews(id) {
+function updateReview(review) {
   return query= db.one(`
     UPDATE reviews
-    SET content = $/content/
+    SET content = $/content/, rating=$/rating/, user_id= $/user_id/, rest_id = $/rest_id/
     WHERE id = $/id/
     RETURNING *
-    `, reviews
+    `, review
   );
 }
 
 
 module.exports = {
   getReviews,
-  createReviews,
-  deleteReviews,
-  updateReviews
+  getUserReviews,
+  getUserRestReview,
+  createReview,
+  deleteReview,
+  updateReview
 }

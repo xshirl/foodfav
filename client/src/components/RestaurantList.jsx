@@ -1,6 +1,7 @@
 import React from 'react';
 // import Restaurant from './Restaurant';
-import { Link, Redirect } from 'react-router-dom';
+import { Link, Redirect, Route } from 'react-router-dom';
+import ReviewForm from './ReviewForm';
 
 export default function RestaurantList(props) {
   return (
@@ -12,6 +13,8 @@ export default function RestaurantList(props) {
         <h4>Location: {restaurant.location.address1} {restaurant.location.city} {restaurant.location.zip_code} </h4>
         <h5> Rating: {restaurant.rating} </h5>
         <h5> Price range: {restaurant.price} </h5>
+        <Link to={'/restaurants/' + restaurant.id}> Add Review </Link>
+        <Route path='/restaurants/:id' render={()=> (<ReviewForm />)} />
         </div>
         ))}
     </div>

@@ -1,7 +1,7 @@
 \c foodfav_db;
 
 
-INSERT INTO bars (name, location, image_url, rating, price)
+INSERT INTO rest (name, location, image_url, rating, price)
 VALUES ('Raise New York', '416 3rd Ave', 'https://s3-media1.fl.yelpcdn.com/bphoto/EQy5cu37S2TNNb-4kTLtMw/ls.jpg', 5, '$$'),
 ('The Dead Rabbit', '30 Water St', 'https://s3-media2.fl.yelpcdn.com/bphoto/7txsI-CAV_BW6IN4pf5WlQ/ls.jpg', 4, '$$'),
 ('Flatbush Zombie House', '734 Flatbush Ave', 'https://s3-media1.fl.yelpcdn.com/bphoto/eGSCRuKytQZJG35jIUX1pw/ls.jpg', 5, '$$'),
@@ -12,13 +12,13 @@ VALUES ('Raise New York', '416 3rd Ave', 'https://s3-media1.fl.yelpcdn.com/bphot
 INSERT INTO users (email, pw_digest, username)
 VALUES('xshirl@gmail.com', 'branch', 'xshirl');
 
-INSERT INTO reviews (content, user_id, bar_id)
+INSERT INTO reviews (content, rating, user_id, rest_id)
 VALUES
-    ('Very good food', 1, 1),
-    ('Great drinks', 1, 2),
-    ('Nice vibes', 1, 3),
-    ('Great drinks', 1, 4),
-    ('Awesome service', 1, 5);
+    ('Very good food', 5, 1, 1),
+    ('Great drinks', 5,  1, 2),
+    ('Nice vibes', 5, 1, 3),
+    ('Great drinks', 5, 1, 4),
+    ('Awesome service', 5, 1, 5);
 
 
 INSERT INTO favs (user_id, bar_id)
