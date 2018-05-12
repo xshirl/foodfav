@@ -15,14 +15,14 @@ const userSeeds = [
 const reviewSeeds = [
     {
         content: 'food is good',
-        rating: ,
-        user_id: 0,
-        rest_id: 0
+        rating: 4,
+        user_id: 1,
+        rest_id: 1
     },
     {
         content: 'food sucks',
-        rating: ,
-        user_id: 1,
+        rating: 3,
+        user_id: 2,
         rest_id: 1
     }
 ]
