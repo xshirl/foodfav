@@ -1,3 +1,18 @@
+<<<<<<< HEAD
+import React from 'react';
+
+export default fuction RestaurantFilter(props) {
+    return(
+        <div class='filter'>
+            <input type='text' value={props.term} onChange={props.onChange} name='term'
+            />
+            <input type='text' value={props.term} onChange={props.onChange} name='location'
+            />
+            <input type='submit' value='Submit'/>
+        </div>
+    )
+}
+=======
 import React, { Component } from 'react';
 import './RestaurantFilter.css';
 
@@ -39,3 +54,4 @@ export default class RestaurantFilter extends Component {
     )
 }
 }
+>>>>>>> 1db2c2f1fd59dfdb9a18ba5986abf46828baca23

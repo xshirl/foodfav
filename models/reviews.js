@@ -1,7 +1,3 @@
-//TODO:Update quote table and model
-// - Add creator_id column referencing users and cascading on delete
-// - When a quote is created, give it a default creator_id prop of null
-
 const db = require('../config/connection');
 
 function getReviews(id) {
@@ -12,14 +8,12 @@ function getReviews(id) {
   return query;
 }
 
-
 function createReviews(id) {
   return query = db.one(`
     INSERT INTO reviews (user_id, rest_id)
     VALUES ($/user_id/, $/rest_id/
     RETURNING *`, user_id, rest_id)
 }
-
 
 function deleteReviews(id) {
   return query = db.none(`

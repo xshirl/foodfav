@@ -1,4 +1,3 @@
-//TODO: need to add authRouter
 const apiRouter = require('express').Router();
 
 const restRouter = require('./restRouter');
