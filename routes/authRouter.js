@@ -1,6 +1,10 @@
 const ar = require('express').Router();
 const authController = require('../controllers/authController');
 
+ar.get('/', authController.restrict, (req, res) => res.json({
+    user: res.locals.user
+  }));
+
 // ar.post('/register', (req,res) => {
 //     res.setEncoding(`Register new user with email ${req.body.email} and pw ${req.body.password}`);
 // });
