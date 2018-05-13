@@ -29,7 +29,11 @@ function getUserRestReviews(req, res, next) {
 }
 
 function createReview(req, res, next) {
-  reviewsDb.createReview(req.body)
+  // reviewsDb.createReview(req.body)
+  reviewDb.createReview({
+    ...req.body,
+    user_id: res.locals.user && res.locals.user.id
+  })
   .then(data=> {
     res.locals.review = data;
     next();
