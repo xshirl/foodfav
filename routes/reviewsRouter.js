@@ -2,6 +2,7 @@ const router = require('express').Router();
 
 const reviewsController = require('../controllers/reviewsController');
 const reviewsRespController = require('../controllers/reviewsRespController');
+const authController = require('../controllers/authController');
 
 router.route('/')
 .get(
@@ -9,6 +10,7 @@ router.route('/')
   reviewsRespController.getReviewsResponse,
   reviewsRespController.sendErrorResponse)
 .post(
+  authController.restrict,
   reviewsController.createReview,
   reviewsRespController.createReviewsResponse,
   reviewsRespController.sendErrorResponse
