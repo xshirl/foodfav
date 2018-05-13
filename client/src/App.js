@@ -3,6 +3,12 @@ import { BrowserRouter as Router } from 'react-router-dom';
 import './App.css';
 import RestaurantList from './components/RestaurantList';
 import RestaurantFilter from './components/RestaurantFilter';
+import {
+  getReviews,
+  createReview,
+  deleteReview,
+  updateReview
+} from './services/apiService';
 
 class App extends Component {
   constructor(props) {
