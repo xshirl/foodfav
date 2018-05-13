@@ -1,6 +1,6 @@
 const db = require('../config/connection');
 const bcrypt = require('bcrypt');
-const saltRounds = 10
+const saltRounds = 10;
 
 //Take an email and password; hash the password and try to create and try to create a new user
 function register(credentials) {
@@ -9,17 +9,24 @@ function register(credentials) {
     return bcrypt.hash(credentials.password, saltRounds)
     .then(hash => {
         const newUser = {
-            username: credentials.username,
-            email: credentials.email,
-            pw_digest: hash
+            email: credentials.email,        
+            pw_digest: hash,
+            username: credentials.username
         };
         return db.one(`
-        INSERT INTO users (username, email, pw_digest)
-        VALUES ($/username/, $/email/, $/pw_digest/)
-        RETURNING id, username, email
+        INSERT INTO users (email, pw_digest, username)
+        VALUES ($/email/, $/pw_digest/, $/username/)
+        RETURNING id, email, username
         `, newUSER)
     });
 }
+
+function findByEmail(email) {
+      return db.one(`
+        SELECT * FROM users
+        WHERE email = $1
+      `, email);
+    }
 
 function login(credentials) {
     return findByEmail(credentials.email)

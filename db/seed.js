@@ -1,4 +1,4 @@
-const users = require('../models/users');
+const user = require('../models/user');
 const reviews = require('../models/reviews');
 
 // (email, pw_digest, username)
@@ -29,9 +29,9 @@ const reviewSeeds = [
 
 Promise.all(userSeeds.map(user.register))
     .then(users => {
-        return Promise.all(reviewSeeds.map((reviewSeed, indx) => quote.create({
+        return Promise.all(reviewSeeds.map((reviewSeed, indx) => review.createReview({
             ...reviewSeed,
-            creator_id: users[indx % 3].id
+            user_id: users[indx % 2].id
         })))
     })
     .then(reviews => console.log(reviews))

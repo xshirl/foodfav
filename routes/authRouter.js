@@ -1,0 +1,15 @@
+const ar = require('express').Router();
+const authController = require('../controllers/authController');
+
+// ar.post('/register', (req,res) => {
+//     res.setEncoding(`Register new user with email ${req.body.email} and pw ${req.body.password}`);
+// });
+
+ar.post('/register', authController.register);
+
+// ar.post('/login', (req,res) => {
+//     res.send(`Log in user with email ${req.body.email} and pw ${req.body.password}`);
+// });
+ar.post('/login', authController.login)
+
+module.exports = ar;
