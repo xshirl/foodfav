@@ -3,13 +3,21 @@ import { BrowserRouter as Router } from 'react-router-dom';
 import './App.css';
 import RestaurantList from './components/RestaurantList';
 import RestaurantFilter from './components/RestaurantFilter';
+import Login from './components/Login';
+import {
+  getReviews,
+  createReview,
+  deleteReview,
+  updateReview,
+  login
+} from './services/apiService';
 
 class App extends Component {
   constructor(props) {
     super(props);
     this.state = {
       restaurants: [],
-
+      currentUser: null
     }
 
     this.handleFilterSubmit = this.handleFilterSubmit.bind(this);

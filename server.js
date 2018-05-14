@@ -2,8 +2,10 @@ const express = require('express');
 const logger = require('morgan');
 const bodyParser = require('body-parser');
 
+const authController = require('./controllers/authController');
+
 const restRouter = require('./routes/restRouter');
-// const apiRouter = require('./routes/apiRouter');
+const apiRouter = require('./routes/apiRouter');
 const favRouter = require('./routes/favRouter');
 const barRouter = require('./routes/barRouter');
 const reviewsRouter = require('./routes/reviewsRouter');
@@ -14,6 +16,7 @@ const PORT = process.env.PORT || 3001;
 app.use(logger('dev'));
 app.use(bodyParser.urlencoded({extended:false}));
 app.use(bodyParser.json());
+app.use(authController.receiveToken);
 
 if(process.env.NODE_ENV === 'production') {
   app.use(express.static('client/build'));
@@ -23,6 +26,7 @@ if(process.env.NODE_ENV === 'production') {
 // app.use('/', restRouter);
 
 app.use('/restaurants', restRouter);
+app.use('/api', apiRouter);
 // apiRouter.get('/restaurants', restRouter);
 app.use('/api/favs', favRouter);
 app.use('/api/bars', barRouter);
