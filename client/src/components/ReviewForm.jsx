@@ -47,15 +47,15 @@ export default class ReviewForm extends Component {
           <label>
           <h3> Review </h3>
           </label>
-          <input type="text" value={this.state.rest_name} onChange={this.handleInputChange} name="rest_name" placeholder="Restaurant Name" />
+          <input type="text" value={this.state.review.rest_name} onChange={this.handleInputChange} name="rest_name" placeholder="Restaurant Name" />
           <textarea
             name='content'
-            value={this.state.content}
+            value={this.state.review.content}
             onChange={this.handleInputChange}
         />
-          <input type="text" value={this.state.rating} onChange={this.handleInputChange} name='rating' placeholder="Rating" />
-          <input type="text" value={this.state.user_id} onChange={this.handleInputChange} name="user_id" placeholder="User id" />
-          <input type="text" value={this.state.rest_id} onChange={this.handleInputChange} name="user_id" placeholder="User id" />
+          <input type="text" value={this.state.review.rating} onChange={this.handleInputChange} name='rating' placeholder="Rating" />
+          <input type="text" value={this.state.review.user_id} onChange={this.handleInputChange} name="user_id" placeholder="User id" />
+          <input type="text" value={this.state.review.rest_id} onChange={this.handleInputChange} name="user_id" placeholder="User id" />
           <button type='submit'>{id ? 'Edit' : 'Create'} Quote</button>
           <Link to='/'>Cancel</Link>
 

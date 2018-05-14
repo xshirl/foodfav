@@ -66,6 +66,7 @@ createReview(review) {
       }
     })
       .then(resp => {
+        console.log(resp)
         if (!resp.ok) throw new Error(resp.statusMessage);
         return resp.json();
       })

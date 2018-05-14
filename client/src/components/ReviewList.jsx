@@ -1,13 +1,15 @@
 import React from 'react';
-import { Switch, Route } from 'react-router-dom';
+import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 import Review from './Review';
 import ReviewForm from './ReviewForm';
 import './ReviewList.css';
 
 export default function ReviewList(props) {
+console.log(props)
   return (
     <ul className='reviewUl'>
       {props.reviews.map(review => (
+        <Router>
         <Switch key={review.id}>
           <Route exact
             path={`/reviews/${review.id}/edit`}
@@ -27,6 +29,7 @@ export default function ReviewList(props) {
             )}
           />
         </Switch>
+        </Router>
       ))}
     </ul>
   )
