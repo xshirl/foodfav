@@ -6,12 +6,12 @@ class Registration extends Component {
     this.state = {
       username: '',
       email: '',
-      password: ''
-    };
-  }
-  this.handleInputChange = this.handleInputChange.bind(this);
-  this.handleSubmit = this.handleSubmit.bind(this);
+      pw_digest: ''
+    }
+    this.handleInputChange = this.handleInputChange.bind(this);
+    this.handleSubmit = this.handleSubmit.bind(this);  
 }
+
 
 handleInputChange(e) {
   const {name, value} = e.target;
@@ -25,7 +25,7 @@ handleSubmit(e) {
   this.setState({
     username: '',
     email: '',
-    password: ''
+    pw_digest: ''
   });
 }
 
@@ -56,10 +56,12 @@ render() {
         type='text'
         onChange={this.handleInputChange}
         value={this.state.password}
-        name='password'
+        name='pw_digest'
       />
       </label>
       <button type='submit'>Login</button>
     </form>
   )
 }
+}
+export default Registration;

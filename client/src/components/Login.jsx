@@ -6,7 +6,7 @@ class Login extends Component {
     super(props);
     this.state = {
       email: '',
-      password: ''
+      pw_digest: ''
     };
     this.handleInputChange = this.handleInputChange.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
@@ -24,7 +24,7 @@ class Login extends Component {
     this.props.onSubmit(this.state);
     this.setState({
       email: '',
-      password: ''
+      pw_digest: ''
     });
   }
 
@@ -46,7 +46,7 @@ class Login extends Component {
             type='password'
             onChange={this.handleInputChange}
             value={this.state.password}
-            name='password'
+            name='pw_digest'
           />
         </label>
         <button type='submit'>Login</button>
