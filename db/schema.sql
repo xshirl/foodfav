@@ -1,7 +1,6 @@
 \c foodfav_db
 
 DROP TABLE IF EXISTS users CASCADE;
-DROP TABLE IF EXISTS favs;
 DROP TABLE IF EXISTS reviews;
 DROP TABLE IF EXISTS rest CASCADE;
 
@@ -22,11 +21,7 @@ CREATE TABLE rest (
     price TEXT
 );
 
-CREATE TABLE favs (
-    id SERIAL PRIMARY KEY,
-    user_id INTEGER REFERENCES users(id),
-    bar_id INTEGER REFERENCES bars(id)
-);
+
 
 CREATE TABLE reviews (
     id SERIAL PRIMARY KEY,

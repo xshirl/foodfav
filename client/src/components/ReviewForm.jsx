@@ -43,7 +43,7 @@ export default class ReviewForm extends Component {
       <div>
         <form onSubmit={this.handleSubmitReview} className={id ? 'edit' : 'create'}>
         {this.state.redirectHome && <Redirect to='/' />}
-        {!id && <h2>New Quote</h2>}
+        {!id && <h2>New Review</h2>}
           <label>
           <h3> Review </h3>
           </label>
