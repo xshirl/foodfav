@@ -1,0 +1,14 @@
+body {
+  margin:0;
+  width:100%;
+  text-align:center;
+}
+
+.reviewUl {
+  list-style-type:none;
+}
+
+.reviewLi {
+  float:left;
+  text-align:center;
+}

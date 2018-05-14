@@ -30,7 +30,7 @@ function getUserRestReviews(req, res, next) {
 
 function createReview(req, res, next) {
   // reviewsDb.createReview(req.body)
-  reviewDb.createReview({
+  reviewsDb.createReview({
     ...req.body,
     user_id: res.locals.user && res.locals.user.id
   })
