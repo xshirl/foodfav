@@ -4,8 +4,8 @@ const reviews = require('../models/reviews');
 // (email, pw_digest, username)
 
 const userSeeds = [
-    {email: 'email@ga.co', pw_digest: 'password', username: 'email'},
-    {email: 'email2@ga.co', pw_digest: 'password', username: 'email2'}
+    {email: 'email4@ga.co', pw_digest: 'password4', username: 'emai4'},
+    {email: 'email2@ga.co', pw_digest: 'password2', username: 'email2'}
 ];
 
 // content TEXT,
