@@ -11,6 +11,18 @@ function saveToken(respBody) {
   return user;
 }
 
+// function checkToken(respBody) {
+//     localStorage.getItem('authToken')
+//     fetch('/auth', {
+//         method: 'GET',
+//         headers: {
+//           'content-type': 'application/json',
+//           'Authorization': `Bearer ${authToken}`
+//         }
+//       }).then(checkStatus).then(saveToken)
+// }
+
+
 // review requests
 
 function getReviews() {
@@ -46,6 +58,7 @@ function updateReview(review, id) {
 // Auth requests
 
 function login(creds) {
+    
   return fetch('/api/auth/login', {
     method: 'POST',
     body: JSON.stringify(creds),
@@ -71,5 +84,6 @@ export {
   createReview,
   deleteReview,
   updateReview,
-  login
+  login,
+  register
 }

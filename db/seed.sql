@@ -21,8 +21,6 @@ VALUES
     ('The Up & Up', 'Awesome service', 5, 1, 5);
 
 
-INSERT INTO favs (user_id, bar_id)
-VALUES (1, 1),
-(1, 2);
+
 
 

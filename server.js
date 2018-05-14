@@ -3,7 +3,7 @@ const logger = require('morgan');
 const bodyParser = require('body-parser');
 
 const authController = require('./controllers/authController');
-
+const authRouter = require('./routes/authRouter');
 const restRouter = require('./routes/restRouter');
 const apiRouter = require('./routes/apiRouter');
 const favRouter = require('./routes/favRouter');

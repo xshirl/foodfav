@@ -9,7 +9,6 @@ CREATE TABLE users (
     email VARCHAR(255) UNIQUE NOT NULL,
     pw_digest VARCHAR(255),
     username VARCHAR(255)
-
 );
 
 CREATE TABLE rest (
