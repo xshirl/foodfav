@@ -12,13 +12,13 @@ VALUES ('Raise New York', '416 3rd Ave', 'https://s3-media1.fl.yelpcdn.com/bphot
 INSERT INTO users (email, pw_digest, username)
 VALUES('xshirl@gmail.com', 'branch', 'xshirl');
 
-INSERT INTO reviews (content, rating, user_id, rest_id)
+INSERT INTO reviews (rest_name, content, rating, user_id, rest_id)
 VALUES
-    ('Very good food', 5, 1, 1),
-    ('Great drinks', 5,  1, 2),
-    ('Nice vibes', 5, 1, 3),
-    ('Great drinks', 5, 1, 4),
-    ('Awesome service', 5, 1, 5);
+    ('Raise New York', 'Very good food', 5, 1, 1),
+    ('The Dead Rabbit', 'Great drinks', 5,  1, 2),
+    ('Flatbush Zombie House', 'Nice vibes', 5, 1, 3),
+    ('The Commissioner', 'Great drinks', 5, 1, 4),
+    ('The Up & Up', 'Awesome service', 5, 1, 5);
 
 
 INSERT INTO favs (user_id, bar_id)

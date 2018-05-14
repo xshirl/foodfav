@@ -30,6 +30,7 @@ CREATE TABLE favs (
 
 CREATE TABLE reviews (
     id SERIAL PRIMARY KEY,
+    rest_name TEXT,
     content TEXT,
     rating INTEGER,
     user_id INTEGER REFERENCES users(id) ON DELETE CASCADE,

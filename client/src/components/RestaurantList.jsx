@@ -5,9 +5,9 @@ import ReviewForm from './ReviewForm';
 
 export default function RestaurantList(props) {
   return (
-    <div class="list">
+    <div className="list">
       {props.restaurants.map(restaurant => (
-        <div class="restaurant">
+        <div className="restaurant">
         <img src={restaurant.image_url} height='300' />
         <h3> {restaurant.name} </h3>
         <h4>Location: {restaurant.location.address1} {restaurant.location.city} {restaurant.location.zip_code} </h4>
