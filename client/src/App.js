@@ -32,6 +32,7 @@ class App extends Component {
     this.handleEdit = this.handleEdit.bind(this);
     this.handleLogin = this.handleLogin.bind(this);
     this.handleRegistration = this.handleRegistration.bind(this);
+    this.logOut = this.logOut.bind(this);
 
   }
 
@@ -64,6 +65,8 @@ class App extends Component {
     })
   }
 
+
+
 createReview(review) {
   const authToken = localStorage.getItem('authToken');
     fetch('/api/reviews', {
@@ -89,6 +92,8 @@ createReview(review) {
   }
 
 deleteReview(id) {
+  const authToken = localStorage.getItem('authToken');
+  if(authToken){
     fetch(`/api/reviews/${id}`, {
       method: 'DELETE'
     })
@@ -104,8 +109,12 @@ deleteReview(id) {
         })
       })
   }
+}
 
   updateReview(review, id) {
+    const authToken = localStorage.getItem('authToken');
+    console.log(authToken);
+    if(authToken){
     fetch(`/api/reviews/${id}`, {
       method: 'PUT',
       body: JSON.stringify(review),
@@ -131,6 +140,7 @@ deleteReview(id) {
         })
       })
   }
+}
 
  handleSubmit(review) {
     this.createReview(review);
@@ -148,9 +158,46 @@ deleteReview(id) {
   this.fetchRestaurants(options.term, options.location);
  }
 
+checkToken() {
+    const authToken = localStorage.getItem('authToken');
+    fetch('/api/auth', {
+      method: 'GET',
+      headers: {
+        'content-type': 'application/json',
+        'Authorization': `Bearer ${authToken}`
+      }
+    })
+    .then(resp => {
+      if (!resp.ok) throw new Error(resp.mesage);
+      return resp.json();
+    })
+    .then(respBody => {
+      this.setState({
+        currentUser: respBody.user
+      })
+    })
+    .catch(err => {
+      console.log('not logged in');
+      localStorage.removeItem('authToken');
+      this.setState({
+        currentUser: null
+      })
+    })
+  }
+
+  logOut(){
+    localStorage.setItem('authToken', '');
+    this.setState (
+    {
+     currentUser: ""
+    }
+    )
+  }
+
 
   componentDidMount() {
     this.fetchReviews();
+    this.checkToken();
   }
 
  handleLogin(creds) {
@@ -170,6 +217,7 @@ handleRegistration(creds) {
         <div class="background">
         <nav>
           <ul>
+            <li><Link to="/" onClick={this.logOut}> Logout</Link></li>
             <li><Link to="/search"> Search </Link></li>
             <li><Link to="/reviews">Reviews </Link></li>
             <li><Link to='/new'> Add New Review </Link></li>
@@ -189,7 +237,20 @@ handleRegistration(creds) {
         <Login onSubmit = {this.handleLogin} />
        Register:
         <Registration onSubmit = {this.handleRegistration} />
+        <div>
+        <nav>
+          <ul>
+            <li><Link to="/search"> Search </Link></li>
+          </ul>
+        </nav>
+      <Switch>
+      <Route exact path="/search" render={() => (<div><RestaurantFilter onSubmit = {this.handleFilterSubmit}  /> <RestaurantList restaurants={this.state.restaurants} /> </div>)} />
+      </Switch>
+        </div>
+
+
         </div>)
+
       }
 
     return (

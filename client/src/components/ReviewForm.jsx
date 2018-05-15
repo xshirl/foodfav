@@ -7,11 +7,13 @@ export default class ReviewForm extends Component {
     this.state = {
       redirectHome: false,
       review: Object.assign({
+
        rest_name:'',
        content: '',
        rating:'',
        user_id:'1',
        rest_id:'1'
+
      }, props.initialValue)
    };
     this.handleInputChange = this.handleInputChange.bind(this);
@@ -54,9 +56,11 @@ export default class ReviewForm extends Component {
             onChange={this.handleInputChange}
             placeholder="Review"
         />
+
           <input class="review" type="text" value={this.state.review.rating} onChange={this.handleInputChange} name='rating' placeholder="Rating" />
           <input type="hidden" value={this.state.review.user_id} onChange={this.handleInputChange} name="user_id" placeholder="User id" />
           <input type="hidden" value={this.state.review.rest_id} onChange={this.handleInputChange} name="rest_id" placeholder="Restaurant id" />
+
           <button type='submit'>{id ? 'Edit' : 'Create'} Review</button>
           <Link to='/'>Cancel</Link>
 
