@@ -5,6 +5,7 @@ export default class ReviewForm extends Component {
   constructor(props) {
     super(props);
     this.state = {
+      redirect:false,
       redirectHome: false,
       review: Object.assign({
 
@@ -39,13 +40,14 @@ export default class ReviewForm extends Component {
       redirectHome: true
     });
   }
-
+  
+ 
   render() {
     const { rest_name, content, user_id, rest_id, id } = this.state.review
     return (
       <div>
         <form class="review" onSubmit={this.handleSubmitReview} className={id ? 'edit' : 'create'}>
-        {this.state.redirectHome && <Redirect to='/' />}
+        {this.state.redirectHome && <Redirect to='/reviews' />}
         {!id && <h2>New Review</h2>}
 
           <input class="review" type="text" value={this.state.review.rest_name} onChange={this.handleInputChange} name="rest_name" placeholder="Restaurant Name" />
