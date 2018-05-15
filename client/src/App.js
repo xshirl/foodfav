@@ -66,11 +66,13 @@ class App extends Component {
   }
 
 createReview(review) {
+  const authToken = localStorage.getItem('authToken');
     fetch('/api/reviews', {
       method: 'POST',
       body: JSON.stringify(review),
       headers: {
-        'content-type': 'application/json'
+        'content-type': 'application/json',
+        'Authorization': `Bearer ${authToken}`
       }
     })
       .then(resp => {
@@ -170,6 +172,7 @@ handleRegistration(creds) {
         <nav>
           <ul>
             <li><Link to="/reviews">Reviews </Link></li>
+            <li><Link to='/new'> Add New Review </Link></li>
           </ul>
         </nav>
       <Switch>
@@ -188,7 +191,7 @@ handleRegistration(creds) {
         <Registration onSubmit = {this.handleRegistration} />
         </div>)
       }
-    
+
     return (
       <Router>
       <div className="App">

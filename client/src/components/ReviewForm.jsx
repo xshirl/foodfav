@@ -52,11 +52,12 @@ export default class ReviewForm extends Component {
             name='content'
             value={this.state.review.content}
             onChange={this.handleInputChange}
+            placeholder="Review"
         />
           <input type="text" value={this.state.review.rating} onChange={this.handleInputChange} name='rating' placeholder="Rating" />
           <input type="text" value={this.state.review.user_id} onChange={this.handleInputChange} name="user_id" placeholder="User id" />
-          <input type="text" value={this.state.review.rest_id} onChange={this.handleInputChange} name="user_id" placeholder="User id" />
-          <button type='submit'>{id ? 'Edit' : 'Create'} Quote</button>
+          <input type="text" value={this.state.review.rest_id} onChange={this.handleInputChange} name="rest_id" placeholder="Restaurant id" />
+          <button type='submit'>{id ? 'Edit' : 'Create'} Review</button>
           <Link to='/'>Cancel</Link>
 
         </form>
