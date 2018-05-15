@@ -20,8 +20,8 @@ function getUserRestReview(user_id, rest_id) {
 
 function createReview(review) {
   return query = db.one(`
-    INSERT INTO reviews (content, rating, user_id, rest_id)
-    VALUES ($/content/, $/rating/, $/user_id/, $/rest_id/)
+    INSERT INTO reviews (rest_name, content, rating, user_id, rest_id)
+    VALUES ($/rest_name/, $/content/, $/rating/, $/user_id/, $/rest_id/)
     RETURNING *`, review)
 }
 

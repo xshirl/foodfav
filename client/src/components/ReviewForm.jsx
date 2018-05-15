@@ -32,6 +32,7 @@ export default class ReviewForm extends Component {
   handleSubmitReview(e) {
     e.preventDefault();
     this.props.onSubmit(this.state.review);
+    console.log(this.state.review);
     this.setState({
       redirectHome: true
     });
