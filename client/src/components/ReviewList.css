@@ -1,7 +1,10 @@
+@import url('https://fonts.googleapis.com/css?family=Lato:300,400,700');
+
 body {
   margin:0;
   width:100%;
   text-align:center;
+  font-family:"Lato";
 }
 
 .reviewUl {
@@ -9,6 +12,43 @@ body {
 }
 
 .reviewLi {
-  float:left;
   text-align:center;
+  background-color: #eeeeee;
+  padding:10px;
+  margin:10px;
+  border-radius:10px;
+}
+
+form input[type=text], form input[type=password], textarea {
+  border: 0;
+  border-bottom: 3px solid #eee;
+  font-size: 1.7em;
+  margin: 20px 0;
+  padding: 5px;
+  display: block;
+  width: 100%;
+  transition: 0.3s;
+}
+
+button {
+  padding:10px;
+  background-color: purple;
+  color:white;
+}
+
+
+a:link {
+  color:purple;
+}
+
+a:hover {
+  color:purple;
+}
+
+a:visited {
+  color:purple;
+}
+
+a:active{
+  color:purple;
 }

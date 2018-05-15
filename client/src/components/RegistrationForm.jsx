@@ -9,7 +9,7 @@ class Registration extends Component {
       pw_digest: ''
     }
     this.handleInputChange = this.handleInputChange.bind(this);
-    this.handleSubmit = this.handleSubmit.bind(this);  
+    this.handleSubmit = this.handleSubmit.bind(this);
 }
 
 
@@ -33,30 +33,33 @@ render() {
   return (
     <form onSubmit={this.handleSubmit}>
       <label>
-        Username:
+
         <input
         type='text'
         onChange={this.handleInputChange}
         value={this.state.username}
         name='username'
+        placeholder="Register username"
         />
       </label>
       <label>
-        Email:
+
       <input
         type='text'
         onChange={this.handleInputChange}
         value={this.state.email}
         name='email'
+        placeholder="Register email"
       />
       </label>
       <label>
-        Password:
+
       <input
-        type='text'
+        type='password'
         onChange={this.handleInputChange}
         value={this.state.password}
         name='pw_digest'
+        placeholder="Register password"
       />
       </label>
       <button type='submit'>Login</button>

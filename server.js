@@ -27,9 +27,6 @@ if(process.env.NODE_ENV === 'production') {
 
 app.use('/restaurants', restRouter);
 app.use('/api', apiRouter);
-// apiRouter.get('/restaurants', restRouter);
-app.use('/api/favs', favRouter);
-app.use('/api/bars', barRouter);
 app.use('/api/reviews', reviewsRouter);
 
 app.listen(PORT, ()=> {

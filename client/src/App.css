@@ -1,28 +1,68 @@
-.App {
+@import url('https://fonts.googleapis.com/css?family=Lato:300,400,700');
+
+
+body {
+  margin: 0;
+  font-family:"Lato", sans-serif;
   text-align: center;
+  font-color: #7C2A30;
 }
 
-.App-logo {
-  animation: App-logo-spin infinite 20s linear;
-  height: 80px;
+nav {
+  padding: 10px;
+  background-color: purple;
 }
 
-.App-header {
-  background-color: #222;
-  height: 150px;
-  padding: 20px;
-  color: white;
+
+ul {
+  list-style-type: none;
 }
 
-.App-title {
-  font-size: 1.5em;
+ul {
+  list-style-type:none;
+}
+ul li {
+  display:inline-block;
+  font-size:20px;
+  padding:10px;
 }
 
-.App-intro {
-  font-size: large;
+li a:link {
+  color:white;
+  text-decoration:none;
+}
+li a:hover{
+  text-decoration:underline;
 }
 
-@keyframes App-logo-spin {
-  from { transform: rotate(0deg); }
-  to { transform: rotate(360deg); }
+li a:visited {
+  color:white;
+  text-decoration:none;
+}
+
+li a:active {
+  color:white;
+  text-decoration:none;
+}
+
+body {
+  background-image:url(https://format-com-cld-res.cloudinary.com/image/private/s--z9f5lVOS--/c_limit,g_center,h_65535,w_2500/a_auto,fl_keep_iptc.progressive,q_95/v1/7707f8b1b492ad9fc7bab4f031d9d035/burger_update.jpg);
+  background-size:cover;
+  background-position:center;
+}
+
+.title {
+  color:white;
+  font-size:40px;
+}
+
+.ressubmit {
+  padding:10px;
+  background-color:purple;
+  font-size:15px;
+  color:white;
+}
+
+.list {
+  color:white;
 }

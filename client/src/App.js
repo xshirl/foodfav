@@ -214,7 +214,7 @@ handleRegistration(creds) {
    let Site;
     if(this.state.currentUser){
       Site = (
-        <div>
+        <div class="background">
         <nav>
           <ul>
             <li><Link to="/" onClick={this.logOut}> Logout</Link></li>
