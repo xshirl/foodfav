@@ -39,6 +39,7 @@ render() {
         onChange={this.handleInputChange}
         value={this.state.username}
         name='username'
+        placeholder="username"
         />
       </label>
       <label>
@@ -48,6 +49,7 @@ render() {
         onChange={this.handleInputChange}
         value={this.state.email}
         name='email'
+        placeholder="email"
       />
       </label>
       <label>
@@ -57,6 +59,7 @@ render() {
         onChange={this.handleInputChange}
         value={this.state.password}
         name='pw_digest'
+        placeholder="password"
       />
       </label>
       <button type='submit'>Login</button>

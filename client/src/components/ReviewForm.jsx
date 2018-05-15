@@ -42,20 +42,19 @@ export default class ReviewForm extends Component {
     const { rest_name, content, user_id, rest_id, id } = this.state.review
     return (
       <div>
-        <form onSubmit={this.handleSubmitReview} className={id ? 'edit' : 'create'}>
+        <form class="review" onSubmit={this.handleSubmitReview} className={id ? 'edit' : 'create'}>
         {this.state.redirectHome && <Redirect to='/' />}
         {!id && <h2>New Review</h2>}
-          <label>
-          <h3> Review </h3>
-          </label>
-          <input type="text" value={this.state.review.rest_name} onChange={this.handleInputChange} name="rest_name" placeholder="Restaurant Name" />
+
+          <input class="review" type="text" value={this.state.review.rest_name} onChange={this.handleInputChange} name="rest_name" placeholder="Restaurant Name" />
           <textarea
+          class="review"
             name='content'
             value={this.state.review.content}
             onChange={this.handleInputChange}
             placeholder="Review"
         />
-          <input type="text" value={this.state.review.rating} onChange={this.handleInputChange} name='rating' placeholder="Rating" />
+          <input class="review" type="text" value={this.state.review.rating} onChange={this.handleInputChange} name='rating' placeholder="Rating" />
           <input type="hidden" value={this.state.review.user_id} onChange={this.handleInputChange} name="user_id" placeholder="User id" />
           <input type="hidden" value={this.state.review.rest_id} onChange={this.handleInputChange} name="rest_id" placeholder="Restaurant id" />
           <button type='submit'>{id ? 'Edit' : 'Create'} Review</button>
