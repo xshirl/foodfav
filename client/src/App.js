@@ -171,12 +171,13 @@ handleRegistration(creds) {
         <div>
         <nav>
           <ul>
+            <li><Link to="/search"> Search </Link></li>
             <li><Link to="/reviews">Reviews </Link></li>
             <li><Link to='/new'> Add New Review </Link></li>
           </ul>
         </nav>
       <Switch>
-      <Route exact path="/" render={() => (<div><RestaurantFilter onSubmit = {this.handleFilterSubmit}  /> <RestaurantList restaurants={this.state.restaurants} /> </div>)} />
+      <Route exact path="/search" render={() => (<div><RestaurantFilter onSubmit = {this.handleFilterSubmit}  /> <RestaurantList restaurants={this.state.restaurants} /> </div>)} />
       <Route exact path="/reviews" render={() => <ReviewList reviews={this.state.reviews} onDelete={this.handleDelete} onEdit={this.handleEdit}/> } />
       <Route exact path="/new" render={()=> <ReviewForm onSubmit={this.handleSubmit} />} />
       </Switch>
