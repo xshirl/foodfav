@@ -33,33 +33,33 @@ render() {
   return (
     <form onSubmit={this.handleSubmit}>
       <label>
-        Username:
+
         <input
         type='text'
         onChange={this.handleInputChange}
         value={this.state.username}
         name='username'
-        placeholder="username"
+        placeholder="Register username"
         />
       </label>
       <label>
-        Email:
+
       <input
         type='text'
         onChange={this.handleInputChange}
         value={this.state.email}
         name='email'
-        placeholder="email"
+        placeholder="Register email"
       />
       </label>
       <label>
-        Password:
+
       <input
         type='password'
         onChange={this.handleInputChange}
         value={this.state.password}
         name='pw_digest'
-        placeholder="password"
+        placeholder="Register password"
       />
       </label>
       <button type='submit'>Login</button>

@@ -33,23 +33,23 @@ class Login extends Component {
     return (
       <form onSubmit={this.handleSubmit}>
         <label>
-          Email:
+
           <input
             type='text'
             onChange={this.handleInputChange}
             value={this.state.email}
             name='email'
-            placeholder='email'
+            placeholder='Log in email'
           />
         </label>
         <label>
-          Password:
+
           <input
             type='password'
             onChange={this.handleInputChange}
             value={this.state.password}
             name='pw_digest'
-            placeholder="password"
+            placeholder="Log in password"
           />
         </label>
         <button type='submit'>Login</button>

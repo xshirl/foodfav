@@ -9,7 +9,7 @@ body {
 }
 
 nav {
-  padding: 15px;
+  padding: 10px;
   background-color: purple;
 }
 
@@ -45,3 +45,24 @@ li a:active {
   text-decoration:none;
 }
 
+body {
+  background-image:url(https://format-com-cld-res.cloudinary.com/image/private/s--z9f5lVOS--/c_limit,g_center,h_65535,w_2500/a_auto,fl_keep_iptc.progressive,q_95/v1/7707f8b1b492ad9fc7bab4f031d9d035/burger_update.jpg);
+  background-size:cover;
+  background-position:center;
+}
+
+.title {
+  color:white;
+  font-size:40px;
+}
+
+.ressubmit {
+  padding:10px;
+  background-color:purple;
+  font-size:15px;
+  color:white;
+}
+
+.list {
+  color:white;
+}

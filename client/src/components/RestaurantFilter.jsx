@@ -29,11 +29,11 @@ export default class RestaurantFilter extends Component {
   render() {
   return (
     <div>
-    <h1> FoodFav </h1>
+    <h1 class="title"> FoodFav </h1>
     <form onSubmit={this.handleSubmit} className='filter'>
       <input type='text' ref='term'  name='term' placeholder="Search term" />
       <input type='text' ref='location'  name="location" placeholder="Location" />
-      <input type="submit" value="Submit" onClick="" />
+      <input class="ressubmit" type="submit" value="Submit" onClick="" />
     </form>
     </div>
     )
