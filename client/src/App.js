@@ -44,7 +44,6 @@ class App extends Component {
       return resp.json();
     })
     .then(respBody => {
-      debugger
       this.setState({
         restaurants: respBody.data.businesses
       })
